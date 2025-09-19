@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  tomcat:
+    image: tomcat:9.0
+    container_name: tomcat
+    restart: unless-stopped
+    ports:
+      - "8083:8080"
+    volumes:
+      - tomcat_data:/usr/local/tomcat
+
+volumes:
+  tomcat_data:
